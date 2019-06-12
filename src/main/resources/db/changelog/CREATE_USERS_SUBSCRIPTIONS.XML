@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="create userSubscriptions table" author="d.gumanov">
+        <createTable tableName="USERS_SUBSCRIPTION">
+            <column name="USER_SUBSCRIPTION_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="SUBSCRIPTION_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="USERS_SUBSCRIPTIONS_SUBSCRIPTION_FK"
+                             referencedTableName="SUBSCRIPTION" referencedColumnNames="SUBSCRIPTION_ID"/>
+            </column>
+            <column name="USER_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="USERS_SUBSCRIPTIONS_USER_FK"
+                             referencedTableName="USERS" referencedColumnNames="USER_ID"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="USERS_SUBSCRIPTIONS_SEQ"/>
+        <createIndex tableName="USERS_SUBSCRIPTION" indexName="USERS_SUBSCRIPTION_SUBSCRIPTION_IDX">
+            <column name="SUBSCRIPTION_ID" type="BIGINT"/>
+        </createIndex>
+        <createIndex tableName="USERS_SUBSCRIPTION" indexName="USERS_SUBSCRIPTION_USER_IDX">
+            <column name="USER_ID" type="BIGINT"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

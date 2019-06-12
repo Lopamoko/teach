@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="update user table" author="d.gumanov">
+        <addColumn tableName="USERS">
+            <column name="USER_LOGIN" type="VARCHAR(200)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="USER_PASSWORD" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USER_EMAIL" type="VARCHAR(200)"/>
+            <column name="USER_PHONE" type="VARCHAR(200)"/>
+        </addColumn>
+        <dropNotNullConstraint tableName="USERS" columnName="USER_FIRST_NAME"/>
+        <dropNotNullConstraint tableName="USERS" columnName="USER_LAST_NAME"/>
+        <addUniqueConstraint tableName="USERS" columnNames="USER_FIRST_NAME, USER_LAST_NAME, USER_PHONE"/>
+    </changeSet>
+</databaseChangeLog>

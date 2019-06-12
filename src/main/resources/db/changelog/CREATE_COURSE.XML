@@ -1,0 +1,36 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="create course table" author="d.gumanov">
+        <createTable tableName="COURSE">
+            <column name="COURSE_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="USER_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="COURSE_AUTHOR_FK" referencedTableName="USERS"
+                             referencedColumnNames="USER_ID"/>
+            </column>
+            <column name="COURSE_NAME" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE_CREATED" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COURSE_DESCRIPTION" type="VARCHAR(2000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COURSE_PURPOSE" type="VARCHAR(400)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="COURSE_SEQ"/>
+        <createIndex tableName="COURSE" indexName="COURSE_NAME_IDX">
+            <column name="COURSE_NAME"/>
+        </createIndex>
+        <createIndex tableName="COURSE" indexName="COURSE_AUTHOR_IDX">
+            <column name="USER_ID"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

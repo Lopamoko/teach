@@ -1,0 +1,23 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="insert image table" author="d.gumanov">
+        <addColumn tableName="COURSE">
+            <column name="COURSE_IMAGE" type="VARCHAR(500)" defaultValue="Some image">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="THEME">
+            <column name="THEME_IMAGE" type="VARCHAR(500)" defaultValue="Some image">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="LESSON">
+            <column name="LESSON_IMAGE" type="VARCHAR(500)" defaultValue="Some image">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

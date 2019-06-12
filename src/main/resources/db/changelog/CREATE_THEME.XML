@@ -1,0 +1,24 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="create theme table" author="d.gumanov">
+        <createTable tableName="THEME">
+            <column name="THEME_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="COURSE_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="THEME_COURSE_FK" referencedTableName="COURSE"
+                             referencedColumnNames="COURSE_ID"/>
+            </column>
+            <column name="THEME_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="THEME_SEQ"/>
+        <createIndex tableName="THEME" indexName="THEME_COURSE_IDX">
+            <column name="COURSE_ID" type="BIGINT"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

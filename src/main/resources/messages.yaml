@@ -1,0 +1,6 @@
+course:
+  courseNotFoundExceptionMessage: При поиске курса произошла ошибка, возможно он был удален.
+  theme:
+    themeNotFoundExceptionMessage: Мы не нашли такую тему в курсе, возможно курс переработали.
+    lesson:
+      lessonNotFoundException: Мы не нашли такой урок в теме, возможно тему переработали.

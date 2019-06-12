@@ -1,0 +1,20 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="changelog/CREATE_USER.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/UPDATE_USER.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_ROLE.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_USER_ROLES.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_COURSE.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_THEME.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_LESSON.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_BLOCK.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/INSERT_IMAGE.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_SUBSCRIPTION.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_USERS_SUBSCRIPTIONS.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/UPDATE_USERS_SUBSCRIPTION.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/INSERT_INTO_COURSE_SUBSCRIPTION_LEVEL.XML" relativeToChangelogFile="true"/>
+</databaseChangeLog>

@@ -1,0 +1,30 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="create block table" author="d.gumanov">
+        <createTable tableName="BLOCK">
+            <column name="BLOCK_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="BLOCK_POSITION" type="NUMBER(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LESSON_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="BLOCK_LESSON_FK" referencedTableName="LESSON"
+                             referencedColumnNames="LESSON_ID"/>
+            </column>
+            <column name="BLOCK_TYPE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BLOCK_DATA" type="VARCHAR(5000)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="BLOCK_SEQ"/>
+        <createIndex tableName="BLOCK" indexName="BLOCK_LESSON_IDX">
+            <column name="LESSON_ID"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

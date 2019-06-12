@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="create lesson table" author="d.gumanov">
+        <createTable tableName="LESSON">
+            <column name="LESSON_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="THEME_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="LESSON_THEME_FK" referencedColumnNames="THEME_ID"
+                             referencedTableName="THEME"/>
+            </column>
+            <column name="LESSON_NUMBER" type="NUMBER(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LESSON_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="LESSON" indexName="LESSON_THEME_IDX">
+            <column name="THEME_ID" type="BIGINT"/>
+        </createIndex>
+        <createSequence sequenceName="LESSON_SEQ"/>
+    </changeSet>
+</databaseChangeLog>
