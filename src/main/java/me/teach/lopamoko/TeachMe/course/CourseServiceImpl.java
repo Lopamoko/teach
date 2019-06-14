@@ -5,6 +5,7 @@ import me.teach.lopamoko.TeachMe.utils.PageRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.querydsl.QPageRequest;
+import org.springframework.data.querydsl.QSort;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -48,7 +49,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Page<CourseDataTransferObject> getAllCourse(PageRequest pageRequest) {
-        QPageRequest qPageRequest = new QPageRequest(pageRequest.getPage(),pageRequest.getSize());
+        QPageRequest qPageRequest = new QPageRequest(pageRequest.getPage(), pageRequest.getSize());
         List<CourseDataTransferObject> courseDataTransferObjectPage = courseRepository.findAll(qPageRequest).stream()
                 .map(course -> courseToCourseDataTransferObjectConverter.convert(course))
                 .collect(Collectors.toList());
