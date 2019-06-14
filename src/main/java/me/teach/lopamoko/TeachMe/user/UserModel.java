@@ -3,6 +3,7 @@ package me.teach.lopamoko.TeachMe.user;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import me.teach.lopamoko.TeachMe.comment.Comment;
 import me.teach.lopamoko.TeachMe.course.Course;
 import me.teach.lopamoko.TeachMe.subscription.Subscription;
 import me.teach.lopamoko.TeachMe.subscription.UsersSubscriptions;
@@ -10,6 +11,7 @@ import me.teach.lopamoko.TeachMe.user_role.UserRole;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Table(name = "USERS")
@@ -44,6 +46,9 @@ public class UserModel {
 
     @Column(name = "USER_PHONE")
     private String userPhone;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comments;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(name = "USER_ROLES",

@@ -17,4 +17,5 @@
     <include file="changelog/CREATE_USERS_SUBSCRIPTIONS.XML" relativeToChangelogFile="true"/>
     <include file="changelog/UPDATE_USERS_SUBSCRIPTION.XML" relativeToChangelogFile="true"/>
     <include file="changelog/INSERT_INTO_COURSE_SUBSCRIPTION_LEVEL.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/CREATE_COMMENT.XML" relativeToChangelogFile="true"/>
 </databaseChangeLog>
