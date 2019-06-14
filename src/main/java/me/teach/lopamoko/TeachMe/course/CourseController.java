@@ -1,8 +1,8 @@
 package me.teach.lopamoko.TeachMe.course;
 
 import lombok.extern.slf4j.Slf4j;
+import me.teach.lopamoko.TeachMe.utils.PageRequest;
 import org.springframework.data.domain.Page;
-import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping
-    public ResponseEntity<Page<CourseDataTransferObject>> getCourses(QPageRequest qPageRequest) {
+    public ResponseEntity<Page<CourseDataTransferObject>> getCourses(PageRequest qPageRequest) {
         log.trace("calling get all courses");
         return ResponseEntity.ok(courseService.getAllCourse(qPageRequest));
     }
