@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
-@RestController("/course")
+@RestController
+@RequestMapping("/api/course")
 @Slf4j
 public class CourseController {
     @Resource

@@ -3,12 +3,12 @@ spring:
     console:
       enabled: true
   application:
-    name: actor-its-me
+    name: teach-me
   datasource:
     driver-class-name: org.postgresql.Driver
     username: cixgnxfacbotyx
     password: 81260896b351830387642f5509fb47c9d1cce743b73e6770e8d7c7174687aa9b
-    url: postgres://cixgnxfacbotyx:81260896b351830387642f5509fb47c9d1cce743b73e6770e8d7c7174687aa9b@ec2-46-137-113-157.eu-west-1.compute.amazonaws.com:5432/d5a2askhop3khv
+    url: jdbc:postgresql://ec2-46-137-113-157.eu-west-1.compute.amazonaws.com:5432/d5a2askhop3khv
   jpa:
     properties:
       hibernate:

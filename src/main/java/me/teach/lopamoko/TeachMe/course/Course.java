@@ -3,7 +3,6 @@ package me.teach.lopamoko.TeachMe.course;
 import lombok.Getter;
 import lombok.Setter;
 import me.teach.lopamoko.TeachMe.course.theme.Theme;
-import me.teach.lopamoko.TeachMe.subscription.Subscription;
 import me.teach.lopamoko.TeachMe.user.UserModel;
 
 import javax.persistence.*;
