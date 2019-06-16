@@ -1,11 +1,13 @@
 package me.teach.lopamoko.TeachMe.course;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import me.teach.lopamoko.TeachMe.utils.PaginationAndSortDslRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CourseRepository extends PagingAndSortingRepository<Course, Long> {
-    Optional<Course> findDistinctByCourseId(Long courseID);
+public interface CourseRepository extends PaginationAndSortDslRepository<Course, QCourse, Long> {
+
 }

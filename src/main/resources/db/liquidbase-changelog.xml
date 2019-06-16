@@ -18,4 +18,6 @@
     <include file="changelog/UPDATE_USERS_SUBSCRIPTION.XML" relativeToChangelogFile="true"/>
     <include file="changelog/INSERT_INTO_COURSE_SUBSCRIPTION_LEVEL.XML" relativeToChangelogFile="true"/>
     <include file="changelog/CREATE_COMMENT.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/ADD_LESSON_TYPE.XML" relativeToChangelogFile="true"/>
+    <include file="changelog/ADD_COURSE_TO_COMMENT.XML" relativeToChangelogFile="true"/>
 </databaseChangeLog>

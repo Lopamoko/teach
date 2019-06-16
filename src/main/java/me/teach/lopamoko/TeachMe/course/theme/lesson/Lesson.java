@@ -36,4 +36,7 @@ public class Lesson {
 
     @Column(name = "LESSON_IMAGE")
     private String lessonImage;
+
+    @Column(name = "LESSON_TYPE")
+    private String lessonType;
 }

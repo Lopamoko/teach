@@ -2,6 +2,7 @@ package me.teach.lopamoko.TeachMe.comment;
 
 import lombok.Getter;
 import lombok.Setter;
+import me.teach.lopamoko.TeachMe.course.Course;
 import me.teach.lopamoko.TeachMe.user.UserModel;
 
 import javax.persistence.*;
@@ -28,4 +29,8 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private UserModel user;
+
+    @ManyToOne
+    @JoinColumn(name = "COURSE_ID")
+    private Course courseCmt;
 }

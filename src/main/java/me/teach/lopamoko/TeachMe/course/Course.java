@@ -2,19 +2,19 @@ package me.teach.lopamoko.TeachMe.course;
 
 import lombok.Getter;
 import lombok.Setter;
+import me.teach.lopamoko.TeachMe.comment.Comment;
 import me.teach.lopamoko.TeachMe.course.theme.Theme;
 import me.teach.lopamoko.TeachMe.user.UserModel;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
 @Table(name = "COURSE")
-@Entity
 @Getter
 @Setter
 @SequenceGenerator(name = "COURSE_SEQ", allocationSize = 1)
+@Entity
 public class Course {
 
     @Id
@@ -46,4 +46,7 @@ public class Course {
 
     @Column(name = "SUBSCRIPTION_LEVEL")
     private Integer subscriptionLevel;
+
+    @OneToMany(mappedBy = "courseCmt")
+    private Set<Comment> comments;
 }

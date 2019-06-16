@@ -5,7 +5,6 @@ import me.teach.lopamoko.TeachMe.utils.PageRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.querydsl.QPageRequest;
-import org.springframework.data.querydsl.QSort;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -42,7 +41,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public CourseDataTransferObject getCourseById(Long courseId) {
-        Course course = courseRepository.findDistinctByCourseId(courseId)
+        Course course = courseRepository.findOne(QCourse.course.courseId.eq(courseId))
                 .orElseThrow(() -> new RuntimeException("Course with not found with id " + courseId));
         return courseToCourseDataTransferObjectConverter.convert(course);
     }
