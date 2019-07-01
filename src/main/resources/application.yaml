@@ -6,9 +6,9 @@ spring:
     name: teach-me
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: cixgnxfacbotyx
-    password: 81260896b351830387642f5509fb47c9d1cce743b73e6770e8d7c7174687aa9b
-    url: jdbc:postgresql://ec2-46-137-113-157.eu-west-1.compute.amazonaws.com:5432/d5a2askhop3khv
+    username: soajudhvqnbzcr
+    password: b3f4b917cace9181ff3fd379fe66e90ba5af23d77c335bd240f3a052739e39ff
+    url: jdbc:postgresql://ec2-46-137-113-157.eu-west-1.compute.amazonaws.com:5432/d40djll15cp8oo
   jpa:
     properties:
       hibernate:
